@@ -2,13 +2,10 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-
-.fa-bitcoin {
-  margin-left: 65%;
-}
+@import "card";
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 }

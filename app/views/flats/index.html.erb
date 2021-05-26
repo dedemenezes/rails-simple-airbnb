@@ -1,19 +1,18 @@
 <h1>Simple Airbnb</h1>
-<% @flats.each do |flat| %>
-<div class="cards">
-  <div class="my-card">
-    <div class="my-card-header">
-      <h2><%= flat.name %></h2>
-      <p><%= flat.address %></p>
-    </div>
-    <div class="my-card-info">
-      <i class="fas fa-user-friends"></i>
-      <%= flat.number_of_guests %>
-      <i class="fab fa-bitcoin"></i>
-      <%= flat.price_per_night %>
-    </div>
-    <%= link_to 'View more info', flat_path(flat) %>
-  </div>
-</div>
 
-<% end %>
+<div class="cards">
+  <% @flats.each do |flat| %>
+    <div class="card-trip">
+      <%= link_to flat_path(flat) do %>
+      <div class="card-trip-infos">
+        <h2><%= flat.name %></h2>
+        <p><%= flat.address %></p>
+      <% end %>    
+      </div>
+        <div class="card-footer-mine">
+         <i class="fas fa-user-friends"><%= flat.number_of_guests %></i>
+         <i class="fab fa-bitcoin"><%= flat.price_per_night %></i>
+        </div>
+    </div>
+  <% end %>
+</div>
