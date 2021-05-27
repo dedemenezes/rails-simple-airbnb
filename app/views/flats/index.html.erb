@@ -3,16 +3,18 @@
 <div class="cards">
   <% @flats.each do |flat| %>
     <div class="card-trip">
-      <%= link_to flat_path(flat) do %>
       <div class="card-trip-infos">
         <h2><%= flat.name %></h2>
-        <p><%= flat.address %></p>
-      <% end %>    
+        <p><%= flat.address %></p>   
       </div>
         <div class="card-footer-mine">
          <i class="fas fa-user-friends"><%= flat.number_of_guests %></i>
          <i class="fab fa-bitcoin"><%= flat.price_per_night %></i>
         </div>
+    </div>
+    <div class="user-actions">
+      <%= link_to "more info", flat_path(flat)%>
+      <%= link_to "Edit this flat", edit_flat_path(flat) %>
     </div>
   <% end %>
 </div>
